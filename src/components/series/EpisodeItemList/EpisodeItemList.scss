@@ -1,0 +1,11 @@
+@import 'common';
+
+.EpisodeItemList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  @include media("<1200px") {
+    grid-template-columns: 1fr;
+  }
+  grid-gap: 1rem;
+  cursor: pointer;
+}

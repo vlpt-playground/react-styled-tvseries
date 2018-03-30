@@ -1,0 +1,135 @@
+@import 'common';
+
+.SeriesHeader {
+  width: 100%;
+  height: 350px;
+  @include media("<1024px") {
+    height: 250px;
+  }
+  background: #dea326;
+  .wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include media("<1600px") {
+      width: 1200px;
+    }
+    @include media("<1200px") {
+      width: 1024px;
+    }
+    @include media("<1024px") {
+      width: 768px;
+    }
+    @include media("<768px") {
+      width: 100%;
+    }
+    header {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      .logo {
+        margin-top: 0.5rem;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+      .menu-button {
+        margin-left: auto;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+      }
+    }
+    .header-contents {
+      flex: 1;
+      display: flex;
+      .thumbnail-area {
+        width: 300px;
+        position: relative;
+        padding-top: 100px;
+        @include media("<1024px") {
+          padding-top: 50px;
+          width: 150px;
+        }
+        @include media("<768px") {
+          display: none;
+        }
+        .floating-thumbnail {
+          width: 300px;
+          height: 445px;
+          @include media("<1024px") {
+            width: 150px;
+            height: 222px;
+          }
+          background: black;
+          position: absolute;
+          @include material-shadow(3, 2);
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .information {
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        padding: 1.5rem;
+        color: white;
+        position: relative;
+        h1 {
+          font-size: 4rem;
+          margin: 0;
+        }
+        .sub-info {
+          padding-left: 0.25rem;
+          font-size: 1.25rem;
+          span + span {
+            margin-left: 1.5rem;
+          }
+        }
+        @include media("<1024px") {
+          h1 { font-size: 2rem; }
+          .sub-info {
+            font-size: 1rem;
+          }
+        }
+        .play-button {
+          @include media("<768px") {
+            display: none;
+          }
+          height: 2.5rem;
+          width: 10rem;
+          border: 2px solid white;
+          color: white;
+          position: absolute;
+          right: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 1.25rem;
+          cursor: pointer;
+          transition: 0.1s ease-in-out all;
+          svg {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+          }
+          &:hover {
+            background: white;
+            color: #dea326;
+            @include material-shadow(3, 0.5);
+          }
+        }
+      }
+    }
+  }
+}
